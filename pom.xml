@@ -66,7 +66,7 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
         <maven.javadoc.version>3.1.1</maven.javadoc.version>
         <maven.release.version>2.5.3</maven.release.version>
         <maven.versions.version>2.7</maven.versions.version>
-        <maven.surefire.version>3.0.0-M3</maven.surefire.version>
+        <maven.surefire.version>3.5.3</maven.surefire.version>
         <maven.source.version>3.1.0</maven.source.version>
     </properties>
     <dependencies>
