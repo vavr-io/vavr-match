@@ -231,38 +231,6 @@
         </plugins>
     </build>
     <profiles>
-        <!-- A profile for code coverage analysis in ci environments -->
-        <profile>
-            <id>ci</id>
-            <activation>
-                <property>
-                    <name>env.CI</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jacoco</groupId>
-                        <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>${maven.jacoco.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>report</id>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>report</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
         <!-- A profile for gpg-signing .jars when releasing -->
         <profile>
             <id>release-sign-artifacts</id>
