@@ -28,3 +28,23 @@ jobs:
 
       - name: Build with Maven
         run: mvn test
+
+  deploy-snapshot:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          architecture: 'x64'
+          cache: 'maven'
+
+      - name: Deploy Snapshot
+        run: mvn deploy -DskipTests -B
+        env:
+          GITHUB_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.CENTRAL_PASSWORD }}
