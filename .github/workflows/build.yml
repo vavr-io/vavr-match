@@ -48,4 +48,4 @@ jobs:
           gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
       - name: Deploy Snapshot
-        run: mvn -B --no-transfer-progress -DskipTests=true deploy
+        run: mvn -B --no-transfer-progress -Psonatype-oss-release -Prelease-sign-artifacts -DskipTests=true deploy
