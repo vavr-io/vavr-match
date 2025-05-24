@@ -56,7 +56,7 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
         <java.version>1.8</java.version>
         <junit.version>4.13.1</junit.version>
         <maven.enforcer.version>3.0.0-M2</maven.enforcer.version>
-        <maven.bundle.version>6.0.0</maven.bundle.version>
+        <maven.bundle.version>5.1.9</maven.bundle.version>
         <maven.install.version>3.0.0-M1</maven.install.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.deploy.version>3.0.0-M1</maven.deploy.version>
