@@ -43,8 +43,10 @@ jobs:
           architecture: 'x64'
           cache: 'maven'
 
+      - name: Setup Maven Settings
+        uses: s4u/maven-settings-action@v3.0.0
+        with:
+          servers: '[{"id": "central", "username": "${{secrets.CENTRAL_USERNAME}}", "password": "${{secrets.CENTRAL_PASSWORD}}"}]'
+
       - name: Deploy Snapshot
         run: mvn deploy -DskipTests -B
-        env:
-          GITHUB_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
-          GITHUB_TOKEN: ${{ secrets.CENTRAL_PASSWORD }}
