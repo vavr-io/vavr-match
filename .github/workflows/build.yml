@@ -43,7 +43,7 @@ jobs:
           java-version: '21'
           cache: 'maven'
           gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE
+          gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
 
       - name: Setup Maven Settings
         uses: s4u/maven-settings-action@v3.0.0
@@ -52,5 +52,3 @@ jobs:
 
       - name: Deploy Snapshot
         run: mvn -B --no-transfer-progress -Psonatype-oss-release -Prelease-sign-artifacts -DskipTests=true deploy
-        env:
-          GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
