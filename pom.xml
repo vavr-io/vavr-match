@@ -196,6 +196,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
+                    <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
                 </configuration>
             </plugin>
             <plugin>
@@ -279,7 +280,8 @@
     </profiles>
     <distributionManagement>
         <snapshotRepository>
-            <id>central</id>
+            <name>Central Portal Snapshots</name>
+            <id>central-portal-snapshots</id>
             <url>https://central.sonatype.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
