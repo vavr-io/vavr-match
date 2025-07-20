@@ -182,6 +182,7 @@
                 <configuration>
                     <publishingServerId>central</publishingServerId>
                     <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
+                    <autoPublish>true</autoPublish>
                 </configuration>
             </plugin>
             <plugin>
@@ -229,12 +230,6 @@
     <profiles>
         <profile>
             <id>maven-central-release</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
