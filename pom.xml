@@ -160,8 +160,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven.javadoc.version}</version>
                 <configuration>
-                    <!-- fix for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
-                    <source>8</source> 
+                    <source>8</source>
                 </configuration> 
             </plugin>
             <plugin>
@@ -231,12 +230,10 @@
         </plugins>
     </build>
     <profiles>
-        <!-- A profile for gpg-signing .jars when releasing -->
         <profile>
-            <id>release-sign-artifacts</id>
+            <id>maven-central-release</id>
             <activation>
                 <property>
-                    <!-- Automatically set to true on mvn release:perform -->
                     <name>performRelease</name>
                     <value>true</value>
                 </property>
