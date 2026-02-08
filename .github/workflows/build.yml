@@ -52,7 +52,7 @@ jobs:
       - name: Read project version
         id: version
         run: |
-          VERSION="$(mvn -q -Dexec.executable=echo -Dexec.args="${project.version}" --non-recursive exec:exec)"
+          VERSION="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version)"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Deploy Snapshot
